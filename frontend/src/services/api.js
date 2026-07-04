@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Change this if your backend runs on another port
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://blog-platform-1-3d9k.onrender.com/api",
 });
 
 // Automatically attach JWT token
