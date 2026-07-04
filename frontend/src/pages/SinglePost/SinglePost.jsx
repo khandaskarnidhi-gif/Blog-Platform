@@ -4,6 +4,7 @@ import { toast } from "react-hot-toast";
 
 import API from "../../services/api";
 import { useAuth } from "../../context/AuthContext";
+import Loader from "../../components/Loader/Loader";
 
 import "./SinglePost.css";
 
@@ -77,16 +78,13 @@ function SinglePost() {
     }
   };
 
-  import Loader from "../../components/Loader/Loader";
   if (!post) {
-  return <Loader />;
-}
+    return <Loader />;
+  }
 
   return (
     <div className="single-post-page">
-
       <div className="post-box">
-
         <h1>{post.title}</h1>
 
         <p className="author">
@@ -96,34 +94,29 @@ function SinglePost() {
         <div className="content">
           {post.content}
         </div>
-
       </div>
 
       <div className="comments-section">
-
         <h2>Comments ({comments.length})</h2>
 
         <form onSubmit={handleComment}>
-
           <textarea
             placeholder="Write a comment..."
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
 
-          <button>Add Comment</button>
-
+          <button type="submit">
+            Add Comment
+          </button>
         </form>
 
         {comments.map((c) => (
           <div className="comment-card" key={c._id}>
-
             <div>
-
               <strong>{c.user.username}</strong>
 
               <p>{c.comment}</p>
-
             </div>
 
             {user && user.id === c.user._id && (
@@ -134,12 +127,9 @@ function SinglePost() {
                 Delete
               </button>
             )}
-
           </div>
         ))}
-
       </div>
-
     </div>
   );
 }
