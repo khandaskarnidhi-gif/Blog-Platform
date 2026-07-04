@@ -5,7 +5,7 @@ A full-stack blogging platform built using the MERN stack where users can regist
 ## Live Demo
 
 - **Frontend (Netlify):https://stately-sundae-83ac94.netlify.app/
-- **Backend (Render):https://blog-platform-1-3d9k.onrender.com/api
+- **Backend (Render):https://blog-platform-1-3d9k.onrender.com
 ## Features
 
 - User Registration and Login
